@@ -1,10 +1,7 @@
 import "./globals.css";
 import { Josefin_Sans, Source_Serif_Pro } from "next/font/google";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
-config.autoAddCss = false;
 
 const sourceSerifPro = Source_Serif_Pro({
 	weight: ["200", "300", "400", "600", "700", "900"],
@@ -34,6 +31,7 @@ export default function RootLayout({
 			<body>
 				<Header />
 				<main>{children}</main>
+				{/*@ts-expect-error Server Component*/}
 				<Footer />
 			</body>
 		</html>

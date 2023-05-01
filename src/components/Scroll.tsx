@@ -6,7 +6,6 @@ export default function Scroll() {
 
 	function logit() {
 		setScrollY(window.pageYOffset);
-		console.log(new Date().getTime());
 	}
 
 	useEffect(() => {
