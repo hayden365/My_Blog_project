@@ -1,7 +1,6 @@
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
 import Image from "next/image";
-import latestArticledJson from "../json/latestArticles.json";
 import { Post } from "@/service/posts";
 
 type Props = {
