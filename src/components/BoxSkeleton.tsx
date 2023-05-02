@@ -7,7 +7,7 @@ type Props = {
 
 export default function BoxSkeleton({ title, children }: Props) {
 	return (
-		<div className="flex flex-col w-full py-12">
+		<div className="flex flex-col w-full py-12 px-6">
 			<div className="flex justify-start">
 				<h4 className="text-2xl tracking-tight text-primary font-bold min-w-fit">
 					{title}

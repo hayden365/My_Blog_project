@@ -4,14 +4,13 @@ import TagUi from "./ui/TagUi";
 
 export default function TagCloud() {
 	const tags = [
-		"Health",
-		"Lifestyle",
-		"Music",
-		"Technology",
-		"Travel",
-		"Video",
+		"health",
+		"lifestyle",
+		"music",
+		"technology",
+		"travel",
+		"video",
 	];
-	console.log(tags);
 
 	return (
 		<BoxSkeleton title="Tag Cloud">

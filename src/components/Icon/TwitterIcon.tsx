@@ -6,5 +6,5 @@ export interface IconProps {
 }
 
 export default function ({ style }: IconProps) {
-	return <BsTwitter className={`${style} `} />;
+	return <BsTwitter className={style} />;
 }

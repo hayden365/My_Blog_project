@@ -11,12 +11,11 @@ type Props = {
 
 export default function RightSection() {
 	return (
-		<section className="hidden lg:grid lg:col-start-3 lg:col-end-4 pr-0">
+		<section className="hidden lg:grid lg:col-start-3 lg:col-end-4 pr-0 lg:content-start">
 			{/*@ts-expect-error Server Component*/}
 			<LatestArticles />
 			<TagCloud />
 			<FollowMe />
-			<AboutMe />
 		</section>
 	);
 }

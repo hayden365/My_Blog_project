@@ -13,13 +13,13 @@ export default async function LatestArticles() {
 		<BoxSkeleton title="Latest Articles">
 			{posts?.map(post => (
 				<article key={post.title} className="flex flex-1 mb-8 ">
-					<div className="w-16 h-16">
+					<div className="w-24 h-16 overflow-hidden">
 						<Image
 							src={post.image}
 							alt="mini picture"
-							width={200}
-							height={200}
-							className="object-cover"
+							width={60}
+							height={60}
+							className="w-full h-full object-fill"
 						/>
 					</div>
 					<div className="flex flex-col flex-wrap pl-6">
