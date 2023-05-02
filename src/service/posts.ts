@@ -12,6 +12,10 @@ export type Post = {
 	image: string;
 };
 
+export async function getThreePost(): Promise<Post[]> {
+	return getAllPosts().then(posts => posts.slice(0, 3));
+}
+
 export const getAllPosts = cache(async () => {
 	const filePath = path.join(process.cwd(), "data", "posts.json");
 	return readFile(filePath, "utf-8")

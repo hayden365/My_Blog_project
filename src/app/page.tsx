@@ -10,7 +10,7 @@ export default async function Home() {
 	return (
 		<div className="max-w-5xl m-auto grid grid-cols-1 lg:grid-cols-3">
 			<PostList posts={posts} />
-			<RightSection posts={posts} />
+			<RightSection/>
 		</div>
 	);
 }

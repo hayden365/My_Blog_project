@@ -9,10 +9,11 @@ type Props = {
 	posts: Post[];
 };
 
-export default function RightSection({ posts }: Props) {
+export default function RightSection() {
 	return (
-		<section className="hidden  lg:grid lg:col-start-3 lg:col-end-4 pr-0">
-			<LatestArticles posts={posts} />
+		<section className="hidden lg:grid lg:col-start-3 lg:col-end-4 pr-0">
+			{/*@ts-expect-error Server Component*/}
+			<LatestArticles />
 			<TagCloud />
 			<FollowMe />
 			<AboutMe />

@@ -14,7 +14,8 @@ export default async function Footer(props: Props) {
 	return (
 		<footer className="max-w-screen-2xl mx-auto">
 			<section className="grid grid-cols-1  lg:grid-cols-4 sm:grid-cols-2 gap-12 mx-9">
-				<LatestArticles posts={posts}  />
+				{/*@ts-expect-error Server Component*/}
+				<LatestArticles />
 				<TagCloud />
 				<FollowMe />
 				<AboutMe />
