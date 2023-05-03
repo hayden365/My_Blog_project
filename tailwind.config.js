@@ -26,6 +26,7 @@ module.exports = {
 				instagramBg: "#e62ba9",
 				rssBg: "#f7b454",
 				fontGray: "#596172",
+				uBlack: "#4b4870",
 			},
 		},
 	},
