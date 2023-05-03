@@ -4,7 +4,7 @@ import TagColors from "./TagColors";
 
 type Props = {
 	tags: string[];
-	size?: string;
+	style?: string;
 };
 
 export type Tag = {
@@ -13,11 +13,11 @@ export type Tag = {
 	hover: string;
 };
 
-export default function TagUi({ tags, size }: Props) {
+export default function TagUi({ tags, style }: Props) {
 	const tagInfo: Tag[] = tagFindHandler(tags);
 
 	return (
-		<div className={size}>
+		<div className={`${style} text-gray-500`}>
 			{tagInfo?.map((tag, index) => (
 				<TagColors tag={tag} key={index} />
 			))}

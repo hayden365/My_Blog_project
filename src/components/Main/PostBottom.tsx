@@ -13,7 +13,7 @@ export default function PostBottom({ post }: Props) {
 		<>
 			<p className="pt-8 text-gray-500">{post.description}</p>
 			<div className="flex justify-between pt-4">
-				<TagUi tags={post.categories} size="text-xs text-gray-500" />
+				<TagUi tags={post.categories} style="text-xs" />
 				<Link href={"/author"}>
 					<div className="flex group">
 						<Image

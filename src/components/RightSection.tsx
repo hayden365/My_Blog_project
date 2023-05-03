@@ -14,7 +14,7 @@ export default function RightSection() {
 		<section className="hidden lg:grid lg:col-start-3 lg:col-end-4 pr-0 lg:content-start">
 			{/*@ts-expect-error Server Component*/}
 			<LatestArticles />
-			<TagCloud />
+			<TagCloud style="text-s" />
 			<FollowMe />
 		</section>
 	);

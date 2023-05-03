@@ -2,7 +2,7 @@ import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
 import TagUi from "./ui/TagUi";
 
-export default function TagCloud() {
+export default function TagCloud({ style }: { style?: string }) {
 	const tags = [
 		"health",
 		"lifestyle",
@@ -15,7 +15,7 @@ export default function TagCloud() {
 	return (
 		<BoxSkeleton title="Tag Cloud">
 			<div className="flex flex-wrap">
-				<TagUi tags={tags} />
+				<TagUi tags={tags} style={style} />
 			</div>
 		</BoxSkeleton>
 	);

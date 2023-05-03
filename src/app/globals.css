@@ -9,3 +9,11 @@ body {
 	box-sizing: border-box;
 }
 
+@layer components {
+	.page-button {
+		@apply text-white bg-uRed py-1 px-4;
+	}
+	.button-hover-red {
+		@apply hover:text-uRed duration-200;
+	}
+}
