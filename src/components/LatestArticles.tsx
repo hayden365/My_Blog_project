@@ -1,14 +1,13 @@
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
 import Image from "next/image";
-import { getThreePost, Post } from "@/service/posts";
+import { Post } from "@/service/posts";
 
 type Props = {
 	posts: Post[];
 };
 
-export default async function LatestArticles() {
-	const posts = await getThreePost();
+export default async function LatestArticles({ posts }: Props) {
 	return (
 		<BoxSkeleton title="Latest Articles">
 			{posts?.map(post => (

@@ -24,7 +24,7 @@ export default function PostListContainer({ posts }: Props) {
 	const paginatePost = pagination({ posts, postLengthPerPage, activePage });
 
 	return (
-		<div className="grid lg:col-start-1 lg:col-end-3 px-10 mb-[60px]">
+		<div className="grid lg:col-start-1 lg:col-end-3 px-10 pl-0 mb-[60px]">
 			{paginatePost.map(post => (
 				<div key={post.title} className="flex flex-col mb-[40px] ">
 					<div className="flex flex-col w-full lg:max-w-3xl p-[50px] lg:px-3 box-content shadow-lg">
