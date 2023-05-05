@@ -3,14 +3,18 @@ import RightSection from "@/components/RightSection";
 import Scroll from "@/components/Scroll";
 import { Post, getAllPosts } from "@/service/posts";
 import PostListContainer from "@/components/Main/PostListContainer";
+import Slider from "@/components/Slider/Slider";
 
 export default async function Home() {
 	const posts: Array<Post> = await getAllPosts();
-	const postsThree: Array<Post> = posts.slice(0, 3);
+	const postsFive: Array<Post> = posts.slice(0, 5);
 	return (
-		<div className="max-w-5xl m-auto grid grid-cols-1 lg:grid-cols-3">
-			<PostListContainer posts={posts} />
-			<RightSection posts={postsThree} />
-		</div>
+		<>
+			<Slider posts={postsFive} />
+			<div className="grid grid-cols-1 lg:grid-cols-3">
+				<PostListContainer posts={posts} />
+				<RightSection />
+			</div>
+		</>
 	);
 }

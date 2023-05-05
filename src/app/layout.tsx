@@ -2,7 +2,6 @@ import "./globals.css";
 import { Josefin_Sans, Source_Serif_Pro } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
-import { getThreePost } from "@/service/posts";
 
 const sourceSerifPro = Source_Serif_Pro({
 	weight: ["200", "300", "400", "600", "700", "900"],
@@ -24,7 +23,6 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const postsThree = await getThreePost();
 	return (
 		<html
 			lang="en"
@@ -32,9 +30,8 @@ export default async function RootLayout({
 		>
 			<body>
 				<Header />
-				<main>{children}</main>
-				{/*@ts-expect-error Server Component*/}
-				<Footer posts={postsThree} />
+				<main className="max-w-5xl m-auto ">{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);

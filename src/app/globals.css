@@ -9,6 +9,10 @@ body {
 	box-sizing: border-box;
 }
 
+button {
+	text-shadow: inherit;
+}
+
 @layer components {
 	.page-button {
 		@apply text-white bg-uRed py-1 px-4;

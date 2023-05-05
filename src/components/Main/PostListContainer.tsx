@@ -1,5 +1,6 @@
 "use client";
 import { Post } from "@/service/posts";
+import Link from "next/link";
 import React, { useState } from "react";
 import PaginateUi from "../ui/PaginateUi";
 import PostBottom from "./PostBottom";
@@ -24,26 +25,28 @@ export default function PostListContainer({ posts }: Props) {
 	const paginatePost = pagination({ posts, postLengthPerPage, activePage });
 
 	return (
-		<div className="grid lg:col-start-1 lg:col-end-3 px-10 pl-0 mb-[60px]">
+		<ul className="grid lg:col-start-1 lg:col-end-3 pr-10 mb-[60px]">
 			{paginatePost.map(post => (
-				<div key={post.title} className="flex flex-col mb-[40px] ">
-					<div className="flex flex-col w-full lg:max-w-3xl p-[50px] lg:px-3 box-content shadow-lg">
+				<li key={post.title} className="flex flex-col mb-[40px] ">
+					<article className="flex flex-col w-full lg:max-w-3xl p-[50px] lg:px-3 box-content shadow-lg">
 						<PostTop post={post} />
 						<PostBottom post={post} />
-					</div>
+					</article>
 					<div className="mx-auto">
-						<button className="relative bottom-1/2 text-white bg-uBlack py-2 px-6 mx-auto">
-							Continue Reading
-						</button>
+						<Link href={`/posts/${post.path}`}>
+							<button className="relative bottom-1/2 text-white bg-uBlack py-2 px-6 mx-auto">
+								Continue Reading
+							</button>
+						</Link>
 					</div>
-				</div>
+				</li>
 			))}
 			<PaginateUi
 				totalPage={totalPage}
 				activePage={activePage}
 				setActivePage={setActivePage}
 			/>
-		</div>
+		</ul>
 	);
 }
 
