@@ -1,3 +1,4 @@
+import BoxSkeleton from "@/components/BoxSkeleton";
 import AdjacentPostCard from "@/components/PostCard/AdjacentPostCard";
 import PostContent from "@/components/PostCard/PostContent";
 import RightSection from "@/components/RightSection";
@@ -15,8 +16,8 @@ export default async function PostPage({ params: { slug } }: Props) {
 	const post = await getPostData(slug);
 	const { title, path, next, prev } = post;
 	return (
-		<article className="grid grid-cols-1 lg:grid-cols-3">
-			<div className="relative grid lg:col-start-1 lg:col-end-3 pr-10 mb-[60px]">
+		<article className="grid grid-cols-1 lg:grid-cols-4">
+			<div className="relative grid lg:col-start-1 lg:col-end-4 pr-10 mb-[60px]">
 				<div className="flex justify-center h-[400px] overflow-hidden">
 					<Image
 						src={`/images/${path}.jpg`}
@@ -29,12 +30,14 @@ export default async function PostPage({ params: { slug } }: Props) {
 					/>
 				</div>
 				<PostContent post={post} />
-				<section>
-					{prev && <AdjacentPostCard post={prev} type="prev" />}
-					{next && <AdjacentPostCard post={next} type="next" />}
-				</section>
+				<BoxSkeleton title="Adjacent Post">
+					<section className="flex flex-col lg:flex-row gap-3">
+						{prev && <AdjacentPostCard post={prev} />}
+						{next && <AdjacentPostCard post={next} />}
+					</section>
+				</BoxSkeleton>
 			</div>
-			<RightSection />
+			<RightSection grid="lg:col-start-4 lg:col-end-5" />
 		</article>
 	);
 }

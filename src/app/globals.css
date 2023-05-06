@@ -13,6 +13,10 @@ button {
 	text-shadow: inherit;
 }
 
+img {
+	height: 100%;
+}
+
 @layer components {
 	.page-button {
 		@apply text-white bg-uRed py-1 px-4;

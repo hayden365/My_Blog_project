@@ -5,9 +5,9 @@ import LatestArticles from "./LatestArticles";
 import TagCloud from "./TagCloud";
 import { Post } from "@/service/posts";
 
-export default function RightSection() {
+export default function RightSection({ grid }: { grid: string }) {
 	return (
-		<section className="hidden lg:grid lg:col-start-3 lg:col-end-4 pr-0 lg:content-start">
+		<section className={`hidden lg:grid pr-0 lg:content-start ${grid}`}>
 			{/*@ts-expect-error Server Component*/}
 			<LatestArticles />
 			<TagCloud style="text-s" />
