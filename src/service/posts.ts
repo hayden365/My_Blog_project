@@ -10,8 +10,8 @@ export type Post = {
 	description: string;
 	categories: string[];
 	image: string;
-  path: string;
-  featured: boolean
+	path: string;
+	featured: boolean;
 };
 
 export type PostData = Post & {
@@ -19,6 +19,10 @@ export type PostData = Post & {
 	next: Post | null;
 	prev: Post | null;
 };
+
+export async function getFeaturedPosts(): Promise<Post[]> {
+	return getAllPosts().then(posts => posts.filter(post => post.featured));
+}
 
 export async function getThreePost(): Promise<Post[]> {
 	return getAllPosts().then(posts => posts.slice(0, 3));

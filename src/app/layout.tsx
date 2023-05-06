@@ -30,7 +30,7 @@ export default async function RootLayout({
 		>
 			<body>
 				<Header />
-				<main className="max-w-5xl m-auto ">{children}</main>
+				<main className="max-w-5xl m-auto">{children}</main>
 				<Footer />
 			</body>
 		</html>

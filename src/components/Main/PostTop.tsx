@@ -19,6 +19,7 @@ export default function PostTop({ post }: Props) {
 						src={post.image}
 						alt="post-image"
 						fill
+						sizes="160px"
 						className="object-cover"
 					/>
 				</div>
