@@ -13,7 +13,7 @@ export const navList = [
 	{ name: "Header Styles", href: "/header-styles", subnav: [] },
 	{ name: "Post Features", href: "/posts", subnav: [] },
 	{ name: "#Tag", href: "/tag", subnav: [] },
-	{ name: "About", href: "/about", subnav: [] },
+	{ name: "Author", href: "/author", subnav: [] },
 	{ name: "Portfolio", href: "/portfolio", subnav: [] },
 	{ name: "Contact", href: "/contact", subnav: [] },
 ];
