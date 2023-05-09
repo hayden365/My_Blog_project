@@ -17,6 +17,7 @@ export default async function LatestArticles() {
 							<Image
 								src={post.image}
 								alt="mini picture"
+								sizes="64px"
 								style={{ objectFit: "cover" }}
 								fill={true}
 							/>

@@ -12,6 +12,7 @@ export type Tag = {
 	name: string;
 	color: string;
 	hover: string;
+	info: string;
 };
 
 export default function TagUi({ tags, style, text_shadow }: Props) {
