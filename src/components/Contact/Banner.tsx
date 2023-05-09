@@ -15,7 +15,7 @@ export default function Banner({
 	return (
 		<p
 			className={`p-2 w-full text-center ${
-				isSuccess ? "bg-green-500 text-white" : "bg-uRed text-white"
+				isSuccess ? "bg-green-500" : "bg-uRed"
 			}`}
 		>{`${message}`}</p>
 	);
