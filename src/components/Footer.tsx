@@ -4,7 +4,6 @@ import FollowMe from "./FollowMe";
 import AboutMe from "./AboutMe";
 import FootLogo from "./FootLogo";
 import LatestArticles from "./LatestArticles";
-import { Post, getAllPosts } from "@/service/posts";
 
 export default function Footer() {
 	return (

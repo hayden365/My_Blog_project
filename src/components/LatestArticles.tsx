@@ -19,6 +19,7 @@ export default async function LatestArticles() {
 								alt="mini picture"
 								style={{ objectFit: "cover" }}
 								fill={true}
+								sizes="64px"
 							/>
 						</div>
 
