@@ -1,3 +1,4 @@
+import PostListContainer from "@/components/Main/PostListContainer";
 import FilterablePosts from "@/components/Tags/FilterablePosts";
 import { getAllPosts, Post } from "@/service/posts";
 import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
@@ -40,7 +41,7 @@ export default async function TagsPage({ params: { slug } }: Props) {
 				</div>
 				<p className="max-w-[600px] text-gray-500">{categoryInfo[0].info}</p>
 			</section>
-			<FilterablePosts filtered={filtered} />
+			<PostListContainer posts={filtered} size="small" />
 		</>
 	);
 }

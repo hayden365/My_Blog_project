@@ -12,7 +12,7 @@ export default async function Home() {
 		<>
 			<Slider posts={postsFive} />
 			<div className="grid grid-cols-1 lg:grid-cols-3">
-				<PostListContainer posts={posts} />
+				<PostListContainer posts={posts} size="large" />
 				<RightSection grid="lg:col-start-3 lg:col-end-4" />
 			</div>
 		</>

@@ -6,12 +6,19 @@ import Link from "next/link";
 
 type Props = {
 	post: Post;
+	size: "small" | "large";
 };
 
-export default function PostBottom({ post }: Props) {
+export default function PostBottom({ post, size = "large" }: Props) {
 	return (
 		<>
-			<p className="pt-8 text-gray-500">{post.description}</p>
+			<p
+				className={`${
+					size === "small" ? "m-5 max-h-36 text-center line-clamp-3" : ""
+				} pt-8 text-gray-500`}
+			>
+				{post.description}
+			</p>
 			<div className="flex justify-between pt-4">
 				<TagUi tags={post.categories} style="text-xs" />
 				<Link href={"/author"}>
