@@ -24,7 +24,8 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 	const pathname = usePathname();
 	useEffect(() => {
 		pathname === "/" ? setpostLengthPerPage(4) : setpostLengthPerPage(6);
-	}, [pathname]);
+  }, [pathname]);
+  
 	const totalPage = Math.floor(posts.length / postLengthPerPage);
 
 	const paginatePost = pagination({ posts, postLengthPerPage, activePage });

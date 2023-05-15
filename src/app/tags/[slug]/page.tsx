@@ -1,7 +1,5 @@
 import PostListContainer from "@/components/Main/PostListContainer";
-import FilterablePosts from "@/components/Tags/FilterablePosts";
 import { getAllPosts, Post } from "@/service/posts";
-import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
 import tagFindHandler from "@/utils/tagFindHandler";
 import React from "react";
 
@@ -21,9 +19,9 @@ export default async function TagsPage({ params: { slug } }: Props) {
 		<>
 			<section className="flex w-full p-12 shadow-lg justify-between items-center ">
 				<div>
-					<h3 className="text-3xl font-bold">
+					<h3 className="capitalize text-3xl font-bold">
 						<span className={`${categoryInfo[0].color}`}>#</span>
-						{capitalizeFirstLetter(slug)}
+						{slug}
 					</h3>
 					<span className="flex text-gray-500">
 						{filtered.length}

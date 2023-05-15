@@ -1,4 +1,3 @@
-import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
 import { Tag } from "./TagUi";
 
 type Props = {
@@ -13,9 +12,9 @@ export default function TagColors({ tag, text_shadow }: Props) {
 		>
 			<span className={tag.color}>#</span>
 			<span
-				className={`${text_shadow}?? 'pl-1 [text-shadow:_3px_3px_5px_rgba(0,0,0,0.5)]':'pl-1'`}
+				className={`capitalize ${text_shadow}?? 'pl-1 [text-shadow:_3px_3px_5px_rgba(0,0,0,0.5)]':'pl-1'`}
 			>
-				{capitalizeFirstLetter(tag.name)}
+				{tag.name}
 			</span>
 		</button>
 	);
