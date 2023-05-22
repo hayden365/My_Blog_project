@@ -14,11 +14,8 @@ export interface INavList {
 
 export const navList: INavList[] = [
 	{ name: "Home", href: "/", subnav: [] },
-	{ name: "Header Styles", href: "/header-styles", subnav: [] },
-	{ name: "Post Features", href: "/posts", subnav: [] },
 	{ name: "#Tag", href: "/tags/lifestyle", subnav: default_tags },
 	{ name: "Author", href: "/author", subnav: [] },
-	{ name: "Portfolio", href: "/portfolio", subnav: [] },
 	{ name: "Contact", href: "/contact", subnav: [] },
 ];
 

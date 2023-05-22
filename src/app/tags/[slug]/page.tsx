@@ -12,9 +12,7 @@ type Props = {
 export default async function TagsPage({ params: { slug } }: Props) {
 	const posts: Array<Post> = await getAllPosts();
 	const categoryInfo = tagFindHandler([slug]);
-	const filtered = posts.filter(post =>
-		post.categories.map(category => category === slug),
-	);
+	const filtered = posts.filter(post => post.categories.includes(slug));
 	return (
 		<>
 			<section className="flex w-full p-12 shadow-lg justify-between items-center ">
