@@ -1,9 +1,9 @@
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
-import FacebookIcon from "./Icon/FacebookIcon";
-import InstagramIcon from "./Icon/InstagramIcon";
-import RssIcon from "./Icon/RssIcon";
-import Twitter from "./Icon/TwitterIcon";
+import FacebookIcon from "./icons/FacebookIcon";
+import InstagramIcon from "./icons/InstagramIcon";
+import RssIcon from "./icons/RssIcon";
+import Twitter from "./icons/TwitterIcon";
 
 const IconStyle = "text-white w-6 h-full m-auto p-auto";
 const IconBigStyle = "text-white w-7 h-full m-auto p-auto";

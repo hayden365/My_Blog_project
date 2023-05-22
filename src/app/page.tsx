@@ -2,8 +2,8 @@ import Image from "next/image";
 import RightSection from "@/components/RightSection";
 import Scroll from "@/components/Scroll";
 import { Post, getAllPosts } from "@/service/posts";
-import PostListContainer from "@/components/Main/PostListContainer";
-import Slider from "@/components/Slider/Slider";
+import PostListContainer from "@/components/main/PostListContainer";
+import Slider from "@/components/slides/Slider";
 
 export default async function Home() {
 	const posts: Array<Post> = await getAllPosts();

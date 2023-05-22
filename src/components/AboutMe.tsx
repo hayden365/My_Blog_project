@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
-import FacebookIcon from "./Icon/FacebookIcon";
-import InstagramIcon from "./Icon/InstagramIcon";
-import TwitterIcon from "./Icon/TwitterIcon";
+import FacebookIcon from "./icons/FacebookIcon";
+import InstagramIcon from "./icons/InstagramIcon";
+import TwitterIcon from "./icons/TwitterIcon";
 
 export default function AboutMe() {
 	return (

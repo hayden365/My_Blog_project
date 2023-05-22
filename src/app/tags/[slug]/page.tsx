@@ -1,4 +1,4 @@
-import PostListContainer from "@/components/Main/PostListContainer";
+import PostListContainer from "@/components/main/PostListContainer";
 import { getAllPosts, Post } from "@/service/posts";
 import tagFindHandler from "@/utils/tagFindHandler";
 import React from "react";

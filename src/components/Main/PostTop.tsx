@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { Post } from "@/service/posts";
 import formatDate from "@/utils/formatDate";
-import BubbleIcon from "../Icon/BubbleIcon";
-import FireIcon from "../Icon/FireIcon";
+import BubbleIcon from "../icons/BubbleIcon";
+import FireIcon from "../icons/FireIcon";
 import Link from "next/link";
 
 type Props = {

@@ -1,9 +1,9 @@
 import React from "react";
-import FacebookIcon from "../Icon/FacebookIcon";
-import HambergerIcon from "../Icon/HambergerIcon";
-import InstagramIcon from "../Icon/InstagramIcon";
-import RssIcon from "../Icon/RssIcon";
-import TwitterIcon from "../Icon/TwitterIcon";
+import FacebookIcon from "../icons/FacebookIcon";
+import HambergerIcon from "../icons/HambergerIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+import RssIcon from "../icons/RssIcon";
+import TwitterIcon from "../icons/TwitterIcon";
 
 export default function LinkBox() {
 	return (

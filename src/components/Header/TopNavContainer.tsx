@@ -6,7 +6,13 @@ type Props = {
 	show: boolean;
 };
 
-export const navList = [
+export interface INavList {
+	name: string;
+	href: string;
+	subnav: string[];
+}
+
+export const navList: INavList[] = [
 	{ name: "Home", href: "/", subnav: [] },
 	{ name: "Header Styles", href: "/header-styles", subnav: [] },
 	{ name: "Post Features", href: "/posts", subnav: [] },

@@ -1,6 +1,6 @@
-import FacebookIcon from "@/components/Icon/FacebookIcon";
-import InstagramIcon from "@/components/Icon/InstagramIcon";
-import TwitterIcon from "@/components/Icon/TwitterIcon";
+import FacebookIcon from "@/components/icons/FacebookIcon";
+import InstagramIcon from "@/components/icons/InstagramIcon";
+import TwitterIcon from "@/components/icons/TwitterIcon";
 import Image from "next/image";
 import React from "react";
 

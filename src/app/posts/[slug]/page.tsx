@@ -1,6 +1,6 @@
 import BoxSkeleton from "@/components/BoxSkeleton";
-import AdjacentPostCard from "@/components/PostCard/AdjacentPostCard";
-import PostContent from "@/components/PostCard/PostContent";
+import AdjacentPostCard from "@/components/post-card/AdjacentPostCard";
+import PostContent from "@/components/post-card/PostContent";
 import RightSection from "@/components/RightSection";
 import { getPostData } from "@/service/posts";
 import Image from "next/image";
