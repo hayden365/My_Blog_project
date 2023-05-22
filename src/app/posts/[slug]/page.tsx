@@ -24,8 +24,6 @@ export default async function PostPage({ params: { slug } }: Props) {
 						alt={title}
 						width={700}
 						height={400}
-						priority
-						quality={75}
 						className="object-cover"
 					/>
 				</div>
