@@ -1,6 +1,4 @@
-import Image from "next/image";
 import RightSection from "@/components/RightSection";
-import Scroll from "@/components/Scroll";
 import { Post, getAllPosts } from "@/service/posts";
 import PostListContainer from "@/components/main/PostListContainer";
 import Slider from "@/components/slides/Slider";
