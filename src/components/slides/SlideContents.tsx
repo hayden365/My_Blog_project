@@ -33,9 +33,7 @@ export default function SlideContents({
 				/>
 			</Link>
 
-			<p className="text-2xl font-serif font-light">
-				{formatDate(date.toString())}
-			</p>
+			<p className="text-2xl font-serif font-light">{formatDate(date)}</p>
 		</div>
 	);
 }

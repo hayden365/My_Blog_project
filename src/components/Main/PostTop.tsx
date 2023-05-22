@@ -40,7 +40,7 @@ export default function PostTop({ post, size = "large" }: Props) {
 						""
 					) : (
 						<div className="font-serif flex gap-2 text-sm pt-2 text-gray-500">
-							<span className="">{formatDate(post.date.toString())}</span>
+							<span className="">{formatDate(post.date)}</span>
 							<span className="flex gap-1 ">
 								<BubbleIcon style="w-[18px] h-[18px] text-uRed" />
 								{post.comments}
@@ -55,7 +55,7 @@ export default function PostTop({ post, size = "large" }: Props) {
 			</div>
 			{size === "small" ? (
 				<div className="justify-center font-serif flex gap-2 text-sm pt-2 text-gray-500">
-					<span className="">{formatDate(post.date.toString())}</span>
+					<span className="">{formatDate(post.date)}</span>
 					<span className="flex gap-1 ">
 						<BubbleIcon style="w-[18px] h-[18px] text-uRed" />
 						{post.comments}

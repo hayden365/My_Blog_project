@@ -28,7 +28,7 @@ export default async function LatestArticles() {
 								{post.title}
 							</h6>
 							<span className="text-xs text-fontGray font-normal">
-								{formatDate(post.date.toString())}
+								{formatDate(post.date)}
 							</span>
 						</div>
 					</article>

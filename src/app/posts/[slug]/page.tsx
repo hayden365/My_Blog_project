@@ -22,6 +22,7 @@ export default async function PostPage({ params: { slug } }: Props) {
 					<Image
 						src={`/images/${path}.jpg`}
 						alt={title}
+						priority={true}
 						width={700}
 						height={400}
 						className="object-cover"
