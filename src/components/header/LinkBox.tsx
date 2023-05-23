@@ -1,9 +1,8 @@
 import React from "react";
-import FacebookIcon from "../icons/FacebookIcon";
 import HambergerIcon from "../icons/HambergerIcon";
-import InstagramIcon from "../icons/InstagramIcon";
+import TistoryIcon from "../icons/TistoryIcon";
 import RssIcon from "../icons/RssIcon";
-import TwitterIcon from "../icons/TwitterIcon";
+import GithubIcon from "../icons/GithubIcon";
 
 export default function LinkBox() {
 	return (
@@ -12,18 +11,9 @@ export default function LinkBox() {
 				<HambergerIcon style="ml-14" size="28" />
 			</div>
 			<nav className="hidden lg:flex gap-4 items-center w-1/3">
-				<a href="https://ko-kr.facebook.com/">
-					<FacebookIcon style="text-facebook w-6 h-6" />
-				</a>
-				<a href="https://twitter.com">
-					<TwitterIcon style="text-twitter w-6 h-6" />
-				</a>
-				<a>
-					<InstagramIcon style="text-instagram w-6 h-6" />
-				</a>
-				<a>
-					<RssIcon style="text-rss w-6 h-6" />
-				</a>
+				<GithubIcon style="text-github w-6 h-6" />
+				<TistoryIcon style="text-tistory w-6 h-6" />
+				<RssIcon style="text-rss w-6 h-6" />
 			</nav>
 		</>
 	);

@@ -1,6 +1,5 @@
-import FacebookIcon from "@/components/icons/FacebookIcon";
-import InstagramIcon from "@/components/icons/InstagramIcon";
-import TwitterIcon from "@/components/icons/TwitterIcon";
+import TistoryIcon from "@/components/icons/TistoryIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
 import Image from "next/image";
 import React from "react";
 
@@ -17,21 +16,18 @@ export default function Authorpage() {
 						className="rounded-full"
 					/>
 					<div>
-						<h4 className="font-extrabold text-3xl">Jonathan Doe</h4>
+						<h4 className="font-extrabold text-3xl">공혜지 | Hyeji Kong</h4>
 						<span className="text-sm text-gray-500 font-normal w-full m-auto">
-							Collaborator & Editor
+							Frontend Engineer
 						</span>
 					</div>
 				</div>
 				<p className="text-center indent-3 text-gray-500">
-					Hello! My name is Jonathan Doe working from Chile. I create some Ghost
-					and Wordpress themes for differents markets, also, i offer live
-					support via our ticket system.
+					안녕하세요 👋 프론트엔드 개발자 공혜지입니다.
 				</p>
 				<nav className="flex justify-center py-4 gap-5">
-					<TwitterIcon style="text-twitter w-[20px] h-full " />
-					<FacebookIcon style="text-facebook w-[20px] h-full" />
-					<InstagramIcon style="text-instagram w-[20px] h-full" />
+					<GithubIcon style="text-github w-[20px] h-full " />
+					<TistoryIcon style="text-tistory w-[20px] h-full" />
 				</nav>
 			</div>
 		</section>

@@ -32,7 +32,7 @@ export default function PostBottom({ post, size = "large" }: Props) {
 						/>
 						<div className="pl-4">
 							<span className="text-sm text-gray-500 group-hover:text-uRed delay-200 ease-in transition">
-								Jonathan Doe
+								Hyeji Kong
 							</span>
 						</div>
 					</div>

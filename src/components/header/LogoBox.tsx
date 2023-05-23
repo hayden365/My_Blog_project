@@ -10,7 +10,7 @@ export default function LogoBox({ size = "text-5xl" }: Props) {
 		<>
 			<h1 className={`flex justify-center font-bold text-uBlue w-1/3 ${size}`}>
 				<Link href="/">
-					<strong className="text-uRed">M</strong>aktub
+					<strong className="text-uRed">My</strong> Blog
 				</Link>
 			</h1>
 		</>

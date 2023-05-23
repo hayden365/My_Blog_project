@@ -53,7 +53,7 @@ export default function ContactForm({ grid }: { grid: string }) {
 	};
 
 	return (
-		<section className={`${grid} shadow-lg`}>
+		<section className={`${grid} shadow-lg p-5`}>
 			<h2 className="text-3xl font-bold text-primary">Contact</h2>
 			<form onSubmit={onSubmit} className="flex flex-col gap-2 h-full py-10">
 				<label htmlFor="name">Your name</label>
@@ -94,7 +94,6 @@ export default function ContactForm({ grid }: { grid: string }) {
 					rows={6}
 					id="message"
 					name="message"
-					required
 					autoFocus
 					value={form.message}
 					onChange={onChange}

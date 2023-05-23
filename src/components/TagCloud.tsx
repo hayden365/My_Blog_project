@@ -12,9 +12,7 @@ export const default_tags = [
 export default function TagCloud({ style }: { style?: string }) {
 	return (
 		<BoxSkeleton title="Tag Cloud">
-			<div className="flex flex-wrap">
-				<TagUi tags={default_tags} style={style} />
-			</div>
+			<TagUi tags={default_tags} style={style} />
 		</BoxSkeleton>
 	);
 }

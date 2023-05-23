@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
-import FacebookIcon from "./icons/FacebookIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import TwitterIcon from "./icons/TwitterIcon";
+import TistoryIcon from "./icons/TistoryIcon";
+import GithubIcon from "./icons/GithubIcon";
 
 export default function AboutMe() {
 	return (
@@ -18,19 +17,16 @@ export default function AboutMe() {
 						className="rounded-full"
 					/>
 					<div className="pl-4">
-						<strong className="text-primary font-bold">Jonathan Doe </strong>
-						<p className="text-fontGray font-normal pt-1">Founder & Editor</p>
+						<strong className="text-primary font-bold">공혜지 </strong>
+						<p className="text-fontGray font-normal pt-1">Frontend Engineer</p>
 						<div className="flex gap-2 pt-2">
-							<TwitterIcon style="text-twitter" />
-							<FacebookIcon style="text-facebook" />
-							<InstagramIcon style="text-instagram" />
+							<GithubIcon style="text-github" />
+							<TistoryIcon style="text-tistory" />
 						</div>
 					</div>
 				</div>
 				<span className="text-fontGray font-normal mt-4 font-serif">
-					Hello! My name is Jonathan Doe working from Chile. I create some Ghost
-					and Wordpress themes for differents markets, also, i offer live
-					support via our ticket system.
+					안녕하세요 👋 JavaScript, React 기반 프론트엔드 개발자 공혜지입니다.
 				</span>
 			</div>
 		</BoxSkeleton>
