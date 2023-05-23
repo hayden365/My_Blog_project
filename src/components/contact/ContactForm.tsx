@@ -94,6 +94,7 @@ export default function ContactForm({ grid }: { grid: string }) {
 					rows={6}
 					id="message"
 					name="message"
+					required
 					autoFocus
 					value={form.message}
 					onChange={onChange}

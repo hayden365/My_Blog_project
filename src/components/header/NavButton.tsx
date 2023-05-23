@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { SlArrowDown } from "react-icons/sl";
 import { INavList } from "./TopNavContainer";
+import TagUi from "../ui/TagUi";
 
 export default function NavButton({ href, name, subnav }: INavList) {
 	return (
@@ -15,15 +16,8 @@ export default function NavButton({ href, name, subnav }: INavList) {
 						{name}
 						<SlArrowDown color="primary" size={10} />
 					</Link>
-					<ul className="absolute hidden group-hover:flex flex-col z-50 bg-white pt-1 w-36 -left-3 shadow-sm">
-						{subnav.map(nav => (
-							<Link
-								href={`/tags/${nav}`}
-								className="text-sm ml-4 my-2 hover:text-uRed hover:duration-200"
-							>
-								{nav}
-							</Link>
-						))}
+					<ul className="absolute hidden group-hover:flex group-hover:rounded-sm flex-col z-50 bg-white pt-2 pl-1 w-36 -left-3 shadow-sm">
+						<TagUi tags={subnav} box_shadow={false} />
 					</ul>
 				</div>
 			) : (

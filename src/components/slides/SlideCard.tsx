@@ -9,7 +9,6 @@ type Props = {
 
 export default function SlideCard({ post }: Props) {
 	const { image, date, title, categories, path } = post;
-	console.log(image);
 	return (
 		<div className="w-full h-full relative flex justify-center items-center">
 			<div className="w-full h-full absolute z-20">

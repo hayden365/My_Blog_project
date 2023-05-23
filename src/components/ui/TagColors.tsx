@@ -4,14 +4,15 @@ import { Tag } from "./TagUi";
 type Props = {
 	tag: Tag;
 	text_shadow?: boolean;
+	box_shadow?: boolean;
 };
 
-export default function TagColors({ tag, text_shadow }: Props) {
+export default function TagColors({ tag, text_shadow, box_shadow }: Props) {
 	return (
 		<>
 			<Link
 				href={`/tags/${tag.name}`}
-				className={`shadow-md px-2 py-1.5 mr-2.5 mb-3 transition ease-in-out delay-150 bg-inherit hover:-translate-y-1 duration-300 ${tag.hover}`}
+				className={`${box_shadow}??'shadow-md':'' px-2 py-1.5 mr-2.5 mb-3 transition ease-in-out delay-100 bg-inherit hover:-translate-y-1 duration-300 ${tag.hover}`}
 			>
 				<span className={tag.color}>#</span>
 				<span
