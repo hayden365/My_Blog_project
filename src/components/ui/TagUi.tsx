@@ -1,4 +1,4 @@
-import tagFindHandler from "@/utils/tagFindHandler";
+import { randomColorBy } from "@/utils/randomColor";
 import React from "react";
 import TagColors from "./TagColors";
 
@@ -9,24 +9,15 @@ type Props = {
 	box_shadow?: boolean;
 };
 
-export type Tag = {
-	name: string;
-	color: string;
-	hover: string;
-	info: string;
-};
-
 export default function TagUi({
 	tags,
 	style = "text-base",
 	text_shadow,
 	box_shadow,
 }: Props) {
-	const tagInfo: Tag[] = tagFindHandler(tags);
-
 	return (
 		<div className={`${style} text-gray-500 flex flex-wrap`}>
-			{tagInfo?.map((tag, index) => (
+			{tags?.map((tag, index) => (
 				<TagColors
 					tag={tag}
 					key={index}

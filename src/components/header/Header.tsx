@@ -11,13 +11,13 @@ export default function Header() {
 
 	return (
 		<>
-			<header className="max-w-5xl flex flex-col mx-auto">
-				<div ref={ref}>
-					<TopNavContainer show={!isInView} />
+			<div ref={ref}>
+				<TopNavContainer show={!isInView} />
+				<header className="max-w-5xl flex flex-col mx-auto">
 					<LogoContainer />
 					<NavContainer />
-				</div>
-			</header>
+				</header>
+			</div>
 		</>
 	);
 }
