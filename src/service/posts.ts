@@ -24,6 +24,8 @@ export async function getThreePost(): Promise<Post[]> {
 	return getAllPosts().then(posts => posts.slice(0, 3));
 }
 
+// `cache` 는 요청의 수명 기간 동안 함수를 캐시할 수 있는 리액트 18의 기능입니다.
+// 즉, 페이지를 렌더링할 때 여러 번 호출할 수 있지만 페이지 빌드 당 한 번만 getPosts()가 호출됩니다.
 export const getAllPosts = cache(async () => {
 	const filePath = path.join(process.cwd(), "data", "posts.json");
 	return readFile(filePath, "utf-8")

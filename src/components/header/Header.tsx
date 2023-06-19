@@ -11,9 +11,9 @@ export default function Header() {
 
 	return (
 		<>
-			<TopNavContainer show={!isInView} />
 			<header className="max-w-5xl flex flex-col mx-auto">
 				<div ref={ref}>
+					<TopNavContainer show={!isInView} />
 					<LogoContainer />
 					<NavContainer />
 				</div>
