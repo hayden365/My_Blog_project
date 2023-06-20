@@ -30,6 +30,17 @@ export default {
       type: 'string',
     },
     {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      validation: (Rule) => Rule.unique(),
+    },
+    {
       title: 'PostImage',
       name: 'postImage',
       type: 'image',
@@ -74,13 +85,15 @@ export default {
     select: {
       title: 'title',
       subtitle: 'author.name',
+      media: 'postImage',
     },
   },
   prepare(selection) {
-    const {title, subtitle} = selection
+    const {title, subtitle, media} = selection
     return {
       title,
       subtitle,
+      media,
     }
   },
 }
