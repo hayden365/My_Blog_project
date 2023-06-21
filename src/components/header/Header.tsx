@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
-import LogoContainer from "./LogoContainer";
+import NavFirstRow from "./NavFirstRow";
 import TopNavContainer from "./TopNavContainer";
 import NavContainer from "./NavContainer";
 
@@ -14,7 +14,7 @@ export default function Header() {
 			<div ref={ref}>
 				<TopNavContainer show={!isInView} />
 				<header className="max-w-5xl flex flex-col mx-auto">
-					<LogoContainer />
+					<NavFirstRow />
 					<NavContainer />
 				</header>
 			</div>

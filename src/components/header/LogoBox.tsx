@@ -8,7 +8,7 @@ type Props = {
 export default function LogoBox({ size = "text-5xl" }: Props) {
 	return (
 		<>
-			<h1 className={`flex justify-center font-bold text-uBlue w-1/3 ${size}`}>
+			<h1 className={`justify-center font-bold text-uBlue ${size}`}>
 				<Link href="/">
 					<strong className="text-uRed">My</strong> Blog
 				</Link>

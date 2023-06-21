@@ -36,7 +36,7 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 				className={`${
 					size === "small"
 						? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 mb-[60px]"
-						: "grid lg:col-start-1 lg:col-end-3 pr-10 mb-[60px]"
+						: "grid lg:col-start-1 lg:col-end-3 mb-[60px]"
 				}`}
 			>
 				{paginatePost.map(post => (
@@ -44,7 +44,7 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 						key={post.title}
 						className={`flex flex-col mb-[40px] ${size === "small" ? "" : ""}`}
 					>
-						<article className="flex flex-col w-full lg:max-w-3xl p-[50px] lg:px-3 box-content shadow-lg">
+						<article className="flex flex-col p-5 lg:max-w-3xl mx-6 lg:px-3 box-content shadow-lg">
 							<PostTop post={post} size={size} />
 							<PostBottom post={post} size={size} />
 						</article>
