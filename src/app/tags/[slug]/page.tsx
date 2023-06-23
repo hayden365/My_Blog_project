@@ -1,5 +1,5 @@
 import PostListContainer from "@/components/main/PostListContainer";
-import { getAllPosts, Post } from "@/service/posts";
+// import { getAllPosts, Post } from "@/service/posts";
 import { randomColorBy } from "@/utils/randomColor";
 import React from "react";
 
@@ -10,8 +10,8 @@ type Props = {
 };
 
 export default async function TagsPage({ params: { slug } }: Props) {
-	const posts: Array<Post> = await getAllPosts();
-	const filtered = posts.filter(post => post.categories.includes(slug));
+	// const posts: Array<Post> = await getAllPosts();
+	// const filtered = posts.filter(post => post.categories.includes(slug));
 	const tagColor = randomColorBy(slug);
 	return (
 		<>
@@ -22,7 +22,7 @@ export default async function TagsPage({ params: { slug } }: Props) {
 						{slug}
 					</h3>
 					<span className="flex text-gray-500">
-						{filtered.length}
+						{/* {filtered.length} */}
 						<hr
 							style={{
 								color: "#FF4B60",
@@ -36,7 +36,7 @@ export default async function TagsPage({ params: { slug } }: Props) {
 					</span>
 				</div>
 			</section>
-			<PostListContainer posts={filtered} size="small" />
+			{/* <PostListContainer posts={filtered} size="small" /> */}
 		</>
 	);
 }

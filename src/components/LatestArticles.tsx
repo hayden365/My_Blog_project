@@ -1,16 +1,16 @@
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
 import Image from "next/image";
-import { getThreePost } from "@/service/posts";
+// import { getThreePost } from "@/service/posts";
 import Link from "next/link";
 import formatDate from "@/utils/formatDate";
 
 export default async function LatestArticles() {
-	const posts = await getThreePost();
+	// const posts = await getThreePost();
 
 	return (
 		<BoxSkeleton title="Latest Articles">
-			{posts?.map(post => (
+			{/* {posts?.map(post => (
 				<Link href={`/posts/${post.path}`} key={post.title}>
 					<article className="flex flex-1 mb-8 ">
 						<div className="w-16 h-16 rounded-sm overflow-hidden relative shrink-0">
@@ -33,7 +33,7 @@ export default async function LatestArticles() {
 						</div>
 					</article>
 				</Link>
-			))}
+			))} */}
 		</BoxSkeleton>
 	);
 }
