@@ -2,9 +2,8 @@ import { IPost } from "../../type";
 import { urlFor, client } from "./sanity";
 
 export async function getAllPostsOf(userId?: string | null): Promise<IPost[]> {
-	if (!userId) return [];
 	const GROQ = `
-  *[_type == "post"&& author->_id="${userId}"] | order(_createdAt desc){
+  *[_type == "post"&& author->_id=="ysmh100"] | order(_createdAt desc){
     "title":title,
     "slug":slug,
     "postImage":postImage,

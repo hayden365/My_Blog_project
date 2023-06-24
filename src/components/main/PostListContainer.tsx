@@ -1,34 +1,28 @@
 "use client";
-import { Post } from "@/service/posts";
+import usePosts from "@/hooks/usePosts";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { IPost } from "../../../type";
 import PaginateUi from "../ui/PaginateUi";
 import PostBottom from "./PostBottom";
 import PostTop from "./PostTop";
 
 type Props = {
-	posts: Post[];
-	size: "small" | "large";
+	size?: "small" | "large";
 };
 
-type Propsfunc = {
-	posts: Post[];
-	postLengthPerPage: number;
-	activePage: number;
-};
+export default function PostListContainer({ size = "large" }: Props) {
+	const { posts, error } = usePosts();
+	console.log(posts);
 
-export default function PostListContainer({ posts, size = "large" }: Props) {
-	const [activePage, setActivePage] = useState(0);
-	const [postLengthPerPage, setpostLengthPerPage] = useState(4);
+	const [activePage, setActivePage] = useState(1);
+	const [limit, setLimit] = useState(4);
 	const pathname = usePathname();
 	useEffect(() => {
-		pathname === "/" ? setpostLengthPerPage(4) : setpostLengthPerPage(6);
+		pathname === "/" ? setLimit(4) : setLimit(6);
 	}, [pathname]);
-
-	const totalPage = Math.floor(posts.length / postLengthPerPage);
-
-	const paginatePost = pagination({ posts, postLengthPerPage, activePage });
+	const offset = (activePage - 1) * limit;
 
 	return (
 		<>
@@ -39,7 +33,7 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 						: "grid lg:col-start-1 lg:col-end-3 mb-[60px]"
 				}`}
 			>
-				{paginatePost.map(post => (
+				{posts?.slice(offset, offset + limit).map(post => (
 					<li
 						key={post.title}
 						className={`flex flex-col mb-[40px] ${size === "small" ? "" : ""}`}
@@ -52,7 +46,7 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 							""
 						) : (
 							<div className="mx-auto">
-								<Link href={`/posts/${post.path}`}>
+								<Link href={`/posts/${post.postId}`}>
 									<button className="relative bottom-1/2 text-white bg-uBlack py-2 px-6 mx-auto">
 										Continue Reading
 									</button>
@@ -65,7 +59,8 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 					""
 				) : (
 					<PaginateUi
-						totalPage={totalPage}
+						total={posts?.length || 4}
+						limit={limit}
 						activePage={activePage}
 						setActivePage={setActivePage}
 					/>
@@ -73,7 +68,8 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 			</ul>
 			{size === "small" ? (
 				<PaginateUi
-					totalPage={totalPage}
+					total={posts?.length || 4}
+					limit={limit}
 					activePage={activePage}
 					setActivePage={setActivePage}
 				/>
@@ -82,11 +78,4 @@ export default function PostListContainer({ posts, size = "large" }: Props) {
 			)}
 		</>
 	);
-}
-
-function pagination({ posts, postLengthPerPage, activePage }: Propsfunc) {
-	const baseNum = activePage * postLengthPerPage;
-	const start = baseNum;
-	const end = baseNum + postLengthPerPage;
-	return posts.slice(start, end);
 }

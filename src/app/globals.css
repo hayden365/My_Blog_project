@@ -24,3 +24,9 @@ img {
 		@apply hover:text-uRed duration-200;
 	}
 }
+
+@layer base {
+	button[aria-current="page"] {
+		@apply bg-uRed;
+	}
+}
