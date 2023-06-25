@@ -13,14 +13,14 @@ export default function NavFirstRow() {
 			<LinkBox />
 			<LogoBox />
 			{session ? (
-				<>
+				<div className="flex gap-2">
 					<img
 						className="w-8 h-8 rounded-full border"
 						alt="user profile"
 						src={image || ""}
 					/>
 					<ColorButton text="Sign out" onClick={() => signOut()} />
-				</>
+				</div>
 			) : (
 				<ColorButton text="Sign in" onClick={() => signIn()} />
 			)}

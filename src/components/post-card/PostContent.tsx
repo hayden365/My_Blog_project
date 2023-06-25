@@ -1,21 +1,39 @@
 import React from "react";
-import { PostData } from "@/service/posts";
 import MarkdownViewer from "./MarkdownViewer";
 import formatDate from "@/utils/formatDate";
+import { IPost, IPostDetail } from "../../../type";
+import Image from "next/image";
+import usePost from "@/hooks/usePost";
 
 type Props = {
-	post: PostData;
+	postId: string;
 };
 
-export default function PostContent({ post }: Props) {
-	const { title, description, date, content } = post;
+export default function PostContent({ postId }: Props) {
+	const { post } = usePost(postId);
+
 	return (
-		<section className="flex flex-col p-4 pt-5 gap-3">
-			<h1 className="text-4xl font-bold">{title}</h1>
-			<span>{formatDate(date)}</span>
-			<p className="text-xl font-bold">{description}</p>
-			<div className="w-44 border-2 border-sky-600 mt-4 mb-8" />
-			<MarkdownViewer content={content} />
-		</section>
+		<>
+			<div className="flex justify-center h-[400px] overflow-hidden">
+				{post && (
+					<Image
+						src={post.postImage}
+						alt={post.slug}
+						priority={true}
+						width={700}
+						height={400}
+						className="object-cover"
+					/>
+				)}
+			</div>
+			{post && (
+				<section className="flex flex-col p-4 pt-5 gap-3">
+					<h1 className="text-4xl font-bold">{post?.title}</h1>
+					<span>{formatDate(post.createdAt)}</span>
+					<div className="w-44 border-2 border-sky-600 mt-4 mb-8" />
+					<MarkdownViewer content={post.content} />
+				</section>
+			)}
+		</>
 	);
 }

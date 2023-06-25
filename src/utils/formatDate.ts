@@ -1,4 +1,4 @@
-export default function formatDate(date: Date): string {
+export default function formatDate(date: string): string {
 	const newDate = new Date(date);
 	const options: Intl.DateTimeFormatOptions = {
 		month: "long",

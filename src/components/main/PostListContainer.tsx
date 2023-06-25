@@ -3,7 +3,6 @@ import usePosts from "@/hooks/usePosts";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { IPost } from "../../../type";
 import PaginateUi from "../ui/PaginateUi";
 import PostBottom from "./PostBottom";
 import PostTop from "./PostTop";

@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Post } from "@/service/posts";
 import SlideCard from "./SlideCard";
 import SliderArrows from "./SliderArrow";
+import { IPost } from "../../../type";
 
 type Props = {
-	posts: Post[];
+	posts: IPost[];
 };
 
 const box = {
@@ -45,7 +45,7 @@ export default function Slider({ posts }: Props) {
 					key={visible}
 					className="absolute w-full h-full"
 				>
-					<SlideCard post={posts[visible]} />
+					{/* <SlideCard post={posts[visible]} /> */}
 				</motion.div>
 			</AnimatePresence>
 			<SliderArrows onNext={onNext} onPrev={onPrev} />

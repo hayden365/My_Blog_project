@@ -1,7 +1,6 @@
 import React from "react";
 import BoxSkeleton from "./BoxSkeleton";
 import Image from "next/image";
-// import { getThreePost } from "@/service/posts";
 import Link from "next/link";
 import formatDate from "@/utils/formatDate";
 

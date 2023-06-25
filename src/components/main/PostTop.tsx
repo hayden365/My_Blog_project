@@ -1,32 +1,34 @@
 import React from "react";
 import Image from "next/image";
-import { Post } from "@/service/posts";
 import formatDate from "@/utils/formatDate";
 import BubbleIcon from "../icons/BubbleIcon";
 import FireIcon from "../icons/FireIcon";
 import Link from "next/link";
+import { IPost } from "../../../type";
 
 type Props = {
-	post: Post;
+	post: IPost;
 	size: "small" | "large";
 };
 
 export default function PostTop({ post, size = "large" }: Props) {
 	return (
-		<Link href={`/posts/${post.path}`}>
+		<Link href={`/posts/${post.postId}`}>
 			<div className="flex gap-8 items-center">
 				<div
 					className={`relative overflow-hidden shrink-0 border border-white z-10 ${
 						size === "small" ? "w-24 h-24" : " w-40 h-40"
 					}`}
 				>
-					<Image
-						src={post.image}
-						alt="post-image"
-						fill
-						sizes="160px"
-						className="object-cover"
-					/>
+					{post?.postImage && (
+						<Image
+							src={post.postImage}
+							alt="post-image"
+							fill
+							sizes="160px"
+							className="object-cover"
+						/>
+					)}
 				</div>
 				<div className="flex flex-col">
 					<h3
@@ -40,14 +42,10 @@ export default function PostTop({ post, size = "large" }: Props) {
 						""
 					) : (
 						<div className="font-serif flex gap-2 text-sm pt-2 text-gray-500">
-							<span className="">{formatDate(post.date)}</span>
+							<span className="">{formatDate(post.createdAt)}</span>
 							<span className="flex gap-1 ">
 								<BubbleIcon style="w-[18px] h-[18px] text-uRed" />
-								{post.comments}
-							</span>
-							<span className="flex gap-1 ">
-								<FireIcon style="w-[18px] h-[18px] text-uRed" />
-								{post.likes}
+								{post.commentsLength}
 							</span>
 						</div>
 					)}
@@ -55,14 +53,10 @@ export default function PostTop({ post, size = "large" }: Props) {
 			</div>
 			{size === "small" ? (
 				<div className="justify-center font-serif flex gap-2 text-sm pt-2 text-gray-500">
-					<span className="">{formatDate(post.date)}</span>
+					<span className="">{formatDate(post.createdAt)}</span>
 					<span className="flex gap-1 ">
 						<BubbleIcon style="w-[18px] h-[18px] text-uRed" />
-						{post.comments}
-					</span>
-					<span className="flex gap-1 ">
-						<FireIcon style="w-[18px] h-[18px] text-uRed" />
-						{post.likes}
+						{post.commentsLength}
 					</span>
 				</div>
 			) : (

@@ -1,5 +1,4 @@
 import PostListContainer from "@/components/main/PostListContainer";
-// import { getAllPosts, Post } from "@/service/posts";
 import { randomColorBy } from "@/utils/randomColor";
 import React from "react";
 

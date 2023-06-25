@@ -3,7 +3,6 @@ import AboutMe from "./AboutMe";
 import FollowMe from "./FollowMe";
 import LatestArticles from "./LatestArticles";
 import TagCloud from "./TagCloud";
-import { Post } from "@/service/posts";
 
 export default function RightSection({ grid }: { grid: string }) {
 	return (
