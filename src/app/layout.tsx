@@ -3,6 +3,7 @@ import { Josefin_Sans, Source_Serif_Pro } from "next/font/google";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 import AuthContext from "@/context/AuthContext";
+import SWRConfigContext from "@/context/SWRConfigContext";
 
 const sourceSerifPro = Source_Serif_Pro({
 	weight: ["200", "300", "400", "600", "700", "900"],
@@ -31,9 +32,11 @@ export default async function RootLayout({
 		>
 			<body>
 				<AuthContext>
-					<Header />
-					<main className="max-w-5xl m-auto">{children}</main>
-					<Footer />
+					<SWRConfigContext>
+						<Header />
+						<main className="max-w-5xl m-auto">{children}</main>
+						<Footer />
+					</SWRConfigContext>
 				</AuthContext>
 			</body>
 		</html>

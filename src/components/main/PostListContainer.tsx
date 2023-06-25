@@ -13,8 +13,7 @@ type Props = {
 };
 
 export default function PostListContainer({ size = "large" }: Props) {
-	const { posts, error } = usePosts();
-	console.log(posts);
+	const { posts } = usePosts();
 
 	const [activePage, setActivePage] = useState(1);
 	const [limit, setLimit] = useState(4);

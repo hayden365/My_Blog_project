@@ -2,18 +2,20 @@ import { IPost } from "../../type";
 import { urlFor, client } from "./sanity";
 
 export async function getAllPostsOf(userId?: string | null): Promise<IPost[]> {
+	if (!userId) return [];
 	const GROQ = `
-  *[_type == "post"&& author->_id=="ysmh100"] | order(_createdAt desc){
-    "title":title,
-    "slug":slug,
-    "postImage":postImage,
-    "description":description,
-    "tags":tags,
-    "postId": _id,
-    "createdAt":_createdAt,
-    "updatedAt":_updatedAt,
-    "commentsLength":count(comments)
-  }
+  *[_type == "post"&& author->_id=="${userId}"]
+      | order(_createdAt desc){
+      "title":title,
+      "slug":slug,
+      "postImage":postImage,
+      "description":description,
+      "tags":tags,
+      "postId": _id,
+      "createdAt": _createdAt,
+      "updatedAt":_updatedAt,
+      "commentsLength": count(comments)
+    }
   `;
 
 	return client.fetch(GROQ).then(posts =>
