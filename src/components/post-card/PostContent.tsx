@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import MarkdownViewer from "./MarkdownViewer";
 import formatDate from "@/utils/formatDate";

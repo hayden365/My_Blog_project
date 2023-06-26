@@ -1,3 +1,4 @@
+"use client";
 import usePosts from "@/hooks/usePosts";
 import { adjacentPost } from "@/utils/adjacentPost";
 import React from "react";
@@ -11,9 +12,9 @@ type Props = {
 
 export default function AdjacentPost({ postId }: Props) {
 	const { posts } = usePosts();
-  if (!posts) return null;
+	if (!posts) return null;
 
-  const { prev, next } = adjacentPost(posts, postId);
+	const { prev, next } = adjacentPost(posts, postId);
 
 	return (
 		<BoxSkeleton title="Adjacent Post">
