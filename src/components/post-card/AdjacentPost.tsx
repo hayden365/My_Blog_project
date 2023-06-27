@@ -1,10 +1,10 @@
-"use client";
-import usePosts from "@/hooks/usePosts";
-import { adjacentPost } from "@/utils/adjacentPost";
-import React from "react";
-import { IPostDetail } from "../../../type";
-import BoxSkeleton from "../BoxSkeleton";
-import AdjacentPostCard from "./AdjacentPostCard";
+'use client';
+import usePosts from '@/hooks/usePosts';
+import { adjacentPost } from '@/utils/adjacentPost';
+import React from 'react';
+import { IPostDetail } from '../../../type';
+import BoxSkeleton from '../BoxSkeleton';
+import AdjacentPostCard from './AdjacentPostCard';
 
 type Props = {
 	postId: string;

@@ -1,11 +1,11 @@
-import { getPostDetail } from "@/service/post";
-import { NextRequest, NextResponse } from "next/server";
+import { deletePost, getPostDetail } from '@/service/post';
+import { NextRequest, NextResponse } from 'next/server';
 
 type Context = {
 	params: { postId: string };
 };
 
-const userId = "ysmh100";
+const userId = 'ysmh100';
 
 export async function GET(_: NextRequest, context: Context) {
 	const { postId } = context.params;
@@ -15,4 +15,10 @@ export async function GET(_: NextRequest, context: Context) {
 	);
 
 	return postDetail;
+}
+
+export async function DELETE(_: NextRequest, context: Context) {
+	const { postId } = context.params;
+	await deletePost(postId);
+	return NextResponse.json({ ok: true });
 }

@@ -5,7 +5,7 @@ import formatDate from "@/utils/formatDate";
 import Link from "next/link";
 
 type Props = {
-	date: Date;
+	date: string;
 	title: string;
 	categories: string[];
 	path: string;

@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import MarkdownViewer from "./MarkdownViewer";
-import formatDate from "@/utils/formatDate";
-import { IPost, IPostDetail } from "../../../type";
-import Image from "next/image";
-import usePost from "@/hooks/usePost";
+'use client';
+import React from 'react';
+import MarkdownViewer from './MarkdownViewer';
+import formatDate from '@/utils/formatDate';
+import { IPost, IPostDetail } from '../../../type';
+import Image from 'next/image';
+import usePost from '@/hooks/usePost';
 
 type Props = {
 	postId: string;
@@ -28,7 +28,7 @@ export default function PostContent({ postId }: Props) {
 				)}
 			</div>
 			{post && (
-				<section className="flex flex-col p-4 pt-5 gap-3">
+				<section className="flex flex-col p-4 pt-5 gap-3 mb-20">
 					<h1 className="text-4xl font-bold">{post?.title}</h1>
 					<span>{formatDate(post.createdAt)}</span>
 					<div className="w-44 border-2 border-sky-600 mt-4 mb-8" />
