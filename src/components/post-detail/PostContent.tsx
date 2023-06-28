@@ -15,21 +15,20 @@ export default function PostContent({ postId }: Props) {
 	const { post } = usePost(postId);
 
 	return (
-		<>
-			<div className="flex justify-center h-[400px] overflow-hidden">
+		<div className="break-words">
+			<div className="relative w-full h-96">
 				{post && (
 					<Image
 						src={post.postImage}
 						alt={post.slug}
 						priority={true}
-						width={700}
-						height={400}
+						fill
 						className="object-cover"
 					/>
 				)}
 			</div>
 			{post && (
-				<section className="flex flex-col p-4 pt-5 gap-3 mb-20">
+				<section className="w-full flex flex-col p-4 pt-5 gap-3 mb-20">
 					<h1 className="text-center text-4xl font-bold text-primary px-10">
 						{post?.title}
 					</h1>
@@ -46,6 +45,6 @@ export default function PostContent({ postId }: Props) {
 					<MarkdownViewer content={post.content} />
 				</section>
 			)}
-		</>
+		</div>
 	);
 }

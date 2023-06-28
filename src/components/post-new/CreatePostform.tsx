@@ -80,6 +80,7 @@ export default function CreatePostForm() {
 				name="title"
 				value={form.title}
 				onChange={onChange}
+				required
 			/>
 			<label htmlFor="tag">Tags</label>
 			<TagInput tags={tags} setTags={setTags} />
@@ -91,6 +92,7 @@ export default function CreatePostForm() {
 				name="content"
 				value={form.content}
 				onChange={onChange}
+				required
 			/>
 			<input
 				className="hidden"
@@ -99,6 +101,7 @@ export default function CreatePostForm() {
 				type="file"
 				accept="image/*"
 				onChange={handleChange}
+				required
 			/>
 			<label
 				className={`w-full h-60 flex flex-col items-center justify-center ${

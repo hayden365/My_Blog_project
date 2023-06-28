@@ -1,18 +1,18 @@
-"use client";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import Image from "next/image";
+'use client';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Image from 'next/image';
 
 export default function MarkdownViewer({ content }: { content: string }) {
 	return (
 		<ReactMarkdown
-			className="prose max-w-none"
+			className="custom-markdown-style w-full"
 			remarkPlugins={[remarkGfm]}
 			components={{
 				code({ node, inline, className, children, ...props }) {
-					const match = /language-(\w+)/.exec(className || "");
+					const match = /language-(\w+)/.exec(className || '');
 					return !inline && match ? (
 						<SyntaxHighlighter
 							language={match[1]}
@@ -20,7 +20,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
 							{...props}
 							style={materialDark}
 						>
-							{String(children).replace(/\n$/, "")}
+							{String(children).replace(/\n$/, '')}
 						</SyntaxHighlighter>
 					) : (
 						<code className={className} {...props}>
@@ -31,10 +31,10 @@ export default function MarkdownViewer({ content }: { content: string }) {
 				img: image => (
 					<Image
 						className="w-full max-h-60 object-cover"
-						src={image.src || ""}
-						alt={image.alt || ""}
-						width={500}
-						height={350}
+						src={image.src || ''}
+						alt={image.alt || ''}
+						sizes="(max-width: 768px) 500px, 100vw"
+						fill
 					/>
 				),
 			}}

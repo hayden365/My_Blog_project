@@ -26,7 +26,196 @@ img {
 }
 
 @layer base {
-	button[aria-current="page"] {
+	button[aria-current='page'] {
 		@apply bg-uRed;
 	}
+}
+
+.custom-markdown-style {
+	@apply text-fontColor;
+}
+.custom-markdown-style h1,
+.custom-markdown-style h2,
+.custom-markdown-style h3,
+.custom-markdown-style h4,
+.custom-markdown-style h5,
+.custom-markdown-style h6 {
+	@apply flex pl-3 text-primary;
+}
+
+.custom-markdown-style h1,
+.custom-markdown-style h2 {
+	@apply border-b-2 pb-3 border-dashed font-bold items-center mb-12 mt-16;
+}
+
+.custom-markdown-style h3,
+.custom-markdown-style h4,
+.custom-markdown-style h5,
+.custom-markdown-style h6 {
+	@apply font-semibold items-center mb-8 mt-12;
+}
+
+.custom-markdown-style h1 {
+	@apply text-2xl justify-center;
+}
+.custom-markdown-style h2 {
+	@apply text-2xl;
+}
+.custom-markdown-style h3 {
+	@apply text-2xl border-b pb-2;
+}
+
+.custom-markdown-style h4 {
+	@apply text-xl;
+}
+.custom-markdown-style h5 {
+	@apply text-lg;
+}
+.custom-markdown-style h6 {
+	@apply text-lg;
+}
+
+.custom-markdown-style p,
+.custom-markdown-style li,
+.custom-markdown-style table {
+	@apply font-serif;
+}
+.custom-markdown-style p,
+.custom-markdown-style li {
+}
+
+.custom-markdown-style p {
+	@apply my-4;
+}
+/* 강조 */
+.custom-markdown-style strong {
+	@apply text-orange-500 font-semibold;
+}
+/* 기울기 */
+
+/* 인라인코드 */
+.custom-markdown-style code {
+	@apply bg-gray-200 py-[0.12rem] px-2 rounded-md text-uRed;
+}
+.custom-markdown-style p code,
+.custom-markdown-style em code,
+.custom-markdown-style th code,
+.custom-markdown-style td code,
+.custom-markdown-style strong code,
+.custom-markdown-style li code {
+	@apply text-sm;
+}
+
+/* 코드블럭 */
+.custom-markdown-style pre div {
+	@apply rounded-md;
+}
+
+/*인용블럭*/
+.custom-markdown-style > blockquote {
+	@apply my-8;
+}
+.custom-markdown-style blockquote {
+	@apply bg-gray-300/10 border-l-4 border-gray-300 pl-5 py-1 mx-2 font-serif rounded shadow-md;
+}
+
+/*링크*/
+.custom-markdown-style a {
+	@apply font-semibold text-sky-500 hover:text-purple-500 transition-colors active:text-red-500
+  hover:underline decoration-dashed underline-offset-2;
+}
+
+/* 리스트 */
+.custom-markdown-style ul,
+.custom-markdown-style ol {
+	@apply list-outside;
+}
+/* unordered list */
+.custom-markdown-style ul {
+	@apply list-none ml-8 mt-4;
+}
+.custom-markdown-style > ul {
+	@apply ml-10;
+}
+.custom-markdown-style ul li {
+	@apply relative mb-4;
+}
+.custom-markdown-style ul li:before {
+	content: '';
+	@apply absolute flex w-[6px] h-[6px] -left-4 top-2 rounded-full bg-gray-300;
+}
+.custom-markdown-style ul ul li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+.custom-markdown-style ul ul ul li:before {
+	@apply border-gray-300 bg-gray-300;
+}
+.custom-markdown-style ul ul ul ul li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+.custom-markdown-style ul ul ul ul ul li:before {
+	@apply border-gray-300 bg-gray-300;
+}
+.custom-markdown-style ul ul ul ul ul ul li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+
+/* ordered list  */
+.custom-markdown-style ol {
+	counter-reset: list-counter;
+	@apply list-none ml-8 mt-4;
+}
+.custom-markdown-style > ol {
+	@apply ml-10;
+}
+.custom-markdown-style ol li {
+	@apply relative mb-4;
+}
+.custom-markdown-style ol li:before {
+	content: counter(list-counter);
+	counter-increment: list-counter;
+	@apply flex justify-center w-5 h-5 leading-5 font-black absolute -left-7 top-0 text-white border border-gray-300 bg-gray-300;
+}
+.custom-markdown-style ol ol li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+.custom-markdown-style ol ol ol li:before {
+	@apply border-gray-300 bg-gray-300;
+}
+.custom-markdown-style ol ol ol ol li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+.custom-markdown-style ol ol ol ol ol li:before {
+	@apply border-gray-300 bg-gray-300;
+}
+.custom-markdown-style ol ol ol ol ol ol li:before {
+	@apply border-fontColor/90 bg-fontColor/90;
+}
+
+/* 테이블 디자인 */
+.custom-markdown-style table {
+	@apply shadow-lg rounded-tr-lg rounded-tl-lg overflow-hidden my-10 mx-auto;
+}
+
+/* 테이블 헤더 */
+.custom-markdown-style table thead {
+}
+.custom-markdown-style table thead tr {
+	@apply bg-primary;
+}
+.custom-markdown-style table thead tr th {
+	@apply text-white py-2 px-3 font-semibold;
+}
+
+/* 테이블 바디 */
+.custom-markdown-style table tbody {
+}
+.custom-markdown-style table tbody tr:nth-child(2n) {
+	@apply bg-primary/5;
+}
+.custom-markdown-style table tbody tr:last-child {
+	@apply border-b-2 border-primary;
+}
+.custom-markdown-style table tbody tr td {
+	@apply p-2 border;
 }
