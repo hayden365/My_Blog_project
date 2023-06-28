@@ -15,7 +15,7 @@ export default function PostContent({ postId }: Props) {
 	const { post } = usePost(postId);
 
 	return (
-		<div className="break-words">
+		<div className="w-full flex flex-col shrink">
 			<div className="relative w-full h-96">
 				{post && (
 					<Image
@@ -23,12 +23,13 @@ export default function PostContent({ postId }: Props) {
 						alt={post.slug}
 						priority={true}
 						fill
-						className="object-cover"
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						className="object-contain"
 					/>
 				)}
 			</div>
 			{post && (
-				<section className="w-full flex flex-col p-4 pt-5 gap-3 mb-20">
+				<section className="w-full flex shrink flex-col p-4 pt-5 gap-3 mb-20">
 					<h1 className="text-center text-4xl font-bold text-primary px-10">
 						{post?.title}
 					</h1>

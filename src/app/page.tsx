@@ -6,7 +6,7 @@ export default async function Home() {
 	return (
 		<>
 			{/* <Slider posts={postsFive} /> */}
-			<div className="grid grid-cols-1 lg:grid-cols-3">
+			<div className="lg:grid lg:grid-cols-3">
 				<PostListContainer />
 				<RightSection grid="lg:col-start-3 lg:col-end-4" />
 			</div>
