@@ -1,6 +1,6 @@
-import RightSection from "@/components/RightSection";
-import PostListContainer from "@/components/main/PostListContainer";
-import Slider from "@/components/slides/Slider";
+import RightSection from '@/components/RightSection';
+import PostListContainer from '@/components/post-mainpage/PostListContainer';
+import Slider from '@/components/slides/Slider';
 
 export default async function Home() {
 	return (

@@ -1,4 +1,4 @@
-import CreatePostForm from '@/components/newPost/CreatePostform';
+import CreatePostForm from '@/components/post-new/CreatePostform';
 import RightSection from '@/components/RightSection';
 import React from 'react';
 

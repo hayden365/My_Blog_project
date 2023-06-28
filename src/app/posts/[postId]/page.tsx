@@ -1,10 +1,10 @@
-import BoxSkeleton from "@/components/BoxSkeleton";
-import AdjacentPost from "@/components/post-card/AdjacentPost";
-import AdjacentPostCard from "@/components/post-card/AdjacentPostCard";
-import PostContent from "@/components/post-card/PostContent";
-import RightSection from "@/components/RightSection";
-import usePost from "@/hooks/usePost";
-import React from "react";
+import BoxSkeleton from '@/components/BoxSkeleton';
+import AdjacentPost from '@/components/post-detail/AdjacentPost';
+import AdjacentPostCard from '@/components/post-detail/AdjacentPostCard';
+import PostContent from '@/components/post-detail/PostContent';
+import RightSection from '@/components/RightSection';
+import usePost from '@/hooks/usePost';
+import React from 'react';
 
 type Props = {
 	params: { postId: string };

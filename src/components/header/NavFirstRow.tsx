@@ -3,8 +3,6 @@ import ColorButton from '../ColorButton';
 import LinkBox from './LinkBox';
 import LogoBox from './LogoBox';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 export default function NavFirstRow() {
 	const { data: session } = useSession();
@@ -15,7 +13,7 @@ export default function NavFirstRow() {
 			<LogoBox />
 			{session ? (
 				<div className="flex gap-2">
-					<Image
+					<img
 						className="w-8 h-8 rounded-full border"
 						alt="user profile"
 						src={image || ''}

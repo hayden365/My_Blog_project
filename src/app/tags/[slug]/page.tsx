@@ -1,6 +1,6 @@
-import PostListContainer from "@/components/main/PostListContainer";
-import { randomColorBy } from "@/utils/randomColor";
-import React from "react";
+import PostListContainer from '@/components/post-mainpage/PostListContainer';
+import { randomColorBy } from '@/utils/randomColor';
+import React from 'react';
 
 type Props = {
 	params: {
@@ -24,11 +24,11 @@ export default async function TagsPage({ params: { slug } }: Props) {
 						{/* {filtered.length} */}
 						<hr
 							style={{
-								color: "#FF4B60",
-								backgroundColor: "#FF4B60",
+								color: '#FF4B60',
+								backgroundColor: '#FF4B60',
 								width: 8,
 								height: 3,
-								margin: "auto 10px",
+								margin: 'auto 10px',
 							}}
 						/>
 						Articles
