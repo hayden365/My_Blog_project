@@ -5,7 +5,7 @@ type Props = {
 	tags: string[];
 	style?: string;
 	text_shadow?: boolean;
-	box_shadow?: boolean;
+	box_shadow?: string;
 };
 
 export default function TagUi({

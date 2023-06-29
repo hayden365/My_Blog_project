@@ -6,8 +6,7 @@ import TagCloud from './TagCloud';
 
 export default function RightSection({ grid }: { grid?: string }) {
 	return (
-		<section className={`hidden lg:grid pr-0 lg:content-start ${grid}`}>
-			{/*@ts-expect-error Server Component*/}
+		<section className={`hidden lg:block pr-0 lg:content-start ${grid}`}>
 			<LatestArticles />
 			<TagCloud style="text-s" />
 			<FollowMe />

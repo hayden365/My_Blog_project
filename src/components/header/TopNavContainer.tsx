@@ -1,4 +1,3 @@
-import getAllTags from '@/utils/getAllTags';
 import Link from 'next/link';
 import LogoBox from './LogoBox';
 
@@ -14,7 +13,7 @@ export interface INavList {
 
 export const navList: INavList[] = [
 	{ name: 'Home', href: '/', subnav: [] },
-	{ name: '#Tag', href: '/tags', subnav: [] },
+	{ name: '#Tag', href: `/tags`, subnav: [] },
 	{ name: 'Author', href: '/author', subnav: [] },
 	{ name: 'Contact', href: '/contact', subnav: [] },
 ];

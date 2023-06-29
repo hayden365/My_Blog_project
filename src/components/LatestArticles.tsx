@@ -1,38 +1,40 @@
-import React from "react";
-import BoxSkeleton from "./BoxSkeleton";
-import Image from "next/image";
-import Link from "next/link";
-import formatDate from "@/utils/formatDate";
+'use client';
+import React from 'react';
+import BoxSkeleton from './BoxSkeleton';
+import Image from 'next/image';
+import Link from 'next/link';
+import formatDate from '@/utils/formatDate';
+import usePosts from '@/hooks/usePosts';
 
-export default async function LatestArticles() {
-	// const posts = await getThreePost();
+export default function LatestArticles() {
+	const { posts } = usePosts();
 
 	return (
 		<BoxSkeleton title="Latest Articles">
-			{/* {posts?.map(post => (
-				<Link href={`/posts/${post.path}`} key={post.title}>
+			{posts?.slice(0, 3).map(post => (
+				<Link href={`/posts/${post.postId}`} key={post.title}>
 					<article className="flex flex-1 mb-8 ">
 						<div className="w-16 h-16 rounded-sm overflow-hidden relative shrink-0">
-							<Image
-								src={post.image}
-								alt="mini picture"
-								sizes="64px"
-								style={{ objectFit: "cover" }}
-								fill={true}
-							/>
+							{post?.postImage && (
+								<Image
+									src={post.postImage}
+									alt="mini picture"
+									sizes="64px"
+									style={{ objectFit: 'cover' }}
+									fill={true}
+								/>
+							)}
 						</div>
 
-						<div className="flex flex-col flex-wrap pl-6">
-							<h6 className="font-bold text-primary tracking-tight">
-								{post.title}
-							</h6>
+						<div className="truncate flex flex-col flex-wrap px-6">
+							<span className="text-primary">{post.title}</span>
 							<span className="text-xs text-fontGray font-normal">
-								{formatDate(post.date)}
+								{formatDate(post.createdAt)}
 							</span>
 						</div>
 					</article>
 				</Link>
-			))} */}
+			))}
 		</BoxSkeleton>
 	);
 }

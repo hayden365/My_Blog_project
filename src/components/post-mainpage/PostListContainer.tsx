@@ -3,17 +3,17 @@ import usePosts from '@/hooks/usePosts';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { IPost } from '../../../type';
 import PaginateUi from '../ui/PaginateUi';
 import PostBottom from './PostBottom';
 import PostTop from './PostTop';
 
 type Props = {
 	size?: 'small' | 'large';
+	posts: IPost[];
 };
 
-export default function PostListContainer({ size = 'large' }: Props) {
-	const { posts } = usePosts();
-
+export default function PostListContainer({ posts, size = 'large' }: Props) {
 	const [activePage, setActivePage] = useState(1);
 	const [limit, setLimit] = useState(4);
 	const pathname = usePathname();
@@ -27,7 +27,7 @@ export default function PostListContainer({ size = 'large' }: Props) {
 			<ul
 				className={`${
 					size === 'small'
-						? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 mb-[60px]'
+						? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 my-[60px]'
 						: 'grid lg:col-start-1 lg:col-end-3 mb-[60px] mt-20'
 				}`}
 			>

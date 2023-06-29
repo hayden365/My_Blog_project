@@ -10,7 +10,7 @@ type Props = {
 	params: { postId: string };
 };
 
-export default async function PostPage({ params: { postId } }: Props) {
+export default function PostPage({ params: { postId } }: Props) {
 	return (
 		<div className="lg:grid lg:grid-cols-4 lg:gap-4">
 			<article className="lg:col-span-3 my-[60px]">
