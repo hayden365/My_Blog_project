@@ -1,6 +1,6 @@
-import { randomColorBy } from "@/utils/randomColor";
-import React from "react";
-import TagColors from "./TagColors";
+import { randomColorBy } from '@/utils/randomColor';
+import React from 'react';
+import TagColors from './TagColors';
 
 type Props = {
 	tags: string[];
@@ -11,7 +11,7 @@ type Props = {
 
 export default function TagUi({
 	tags,
-	style = "text-base",
+	style = 'text-base',
 	text_shadow,
 	box_shadow,
 }: Props) {

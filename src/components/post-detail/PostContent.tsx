@@ -6,6 +6,7 @@ import { IPost, IPostDetail } from '../../../type';
 import Image from 'next/image';
 import usePost from '@/hooks/usePost';
 import BubbleIcon from '../icons/BubbleIcon';
+import TagUi from '../ui/TagUi';
 
 type Props = {
 	postId: string;
@@ -15,7 +16,7 @@ export default function PostContent({ postId }: Props) {
 	const { post } = usePost(postId);
 
 	return (
-		<div className="w-full flex flex-col shrink">
+		<>
 			<div className="relative w-full h-96">
 				{post && (
 					<Image
@@ -44,8 +45,12 @@ export default function PostContent({ postId }: Props) {
 					</div>
 					<div className="w-full border-2 border-gray-100 mt-4 mb-8" />
 					<MarkdownViewer content={post.content} />
+					<section className="w-full flex flex-col items-center gap-4 my-10">
+						<h6 className="text-primary font-bold">Categorized in</h6>
+						<TagUi tags={post.tags} />
+					</section>
 				</section>
 			)}
-		</div>
+		</>
 	);
 }

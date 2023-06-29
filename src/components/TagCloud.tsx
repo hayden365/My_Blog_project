@@ -1,18 +1,17 @@
-import BoxSkeleton from "./BoxSkeleton";
-import TagUi from "./ui/TagUi";
+'use client';
+import usePosts from '@/hooks/usePosts';
+import getAllTags from '@/utils/getAllTags';
+import React from 'react';
+import BoxSkeleton from './BoxSkeleton';
+import TagUi from './ui/TagUi';
 
-export const default_tags = [
-	"health",
-	"lifestyle",
-	"music",
-	"technology",
-	"travel",
-	"video",
-];
 export default function TagCloud({ style }: { style?: string }) {
+	const { posts } = usePosts();
+	const tags = Object.keys(React.useMemo(() => getAllTags(posts), [posts]));
+
 	return (
 		<BoxSkeleton title="Tag Cloud">
-			<TagUi tags={default_tags} style={style} />
+			<TagUi tags={tags} style={style} />
 		</BoxSkeleton>
 	);
 }

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import LogoBox from "./LogoBox";
-import { default_tags } from "../TagCloud";
+import getAllTags from '@/utils/getAllTags';
+import Link from 'next/link';
+import LogoBox from './LogoBox';
 
 type Props = {
 	show: boolean;
@@ -13,10 +13,10 @@ export interface INavList {
 }
 
 export const navList: INavList[] = [
-	{ name: "Home", href: "/", subnav: [] },
-	{ name: "#Tag", href: "/tags/lifestyle", subnav: default_tags },
-	{ name: "Author", href: "/author", subnav: [] },
-	{ name: "Contact", href: "/contact", subnav: [] },
+	{ name: 'Home', href: '/', subnav: [] },
+	{ name: '#Tag', href: '/tags', subnav: [] },
+	{ name: 'Author', href: '/author', subnav: [] },
+	{ name: 'Contact', href: '/contact', subnav: [] },
 ];
 
 export default function TopNavContainer({ show }: Props) {
@@ -24,7 +24,7 @@ export default function TopNavContainer({ show }: Props) {
 		<>
 			<div
 				className={`${
-					show ? "opacity-100" : "opacity-0"
+					show ? 'opacity-100' : 'opacity-0'
 				} transition-all w-full fixed top-0 z-50 bg-white shadow-md`}
 			>
 				<div className="mx-auto flex justify-between items-center h-16 py-2 max-w-5xl">
