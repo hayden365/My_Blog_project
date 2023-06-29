@@ -4,11 +4,11 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		domains: ["cdn.sanity.io"],
+		domains: ['cdn.sanity.io', 'media.giphy.com'],
 	},
 };
 
-const withMDX = require("@next/mdx")({
+const withMDX = require('@next/mdx')({
 	options: {
 		remarkPlugins: [],
 		rehypePlugins: [],

@@ -1,4 +1,3 @@
-import { randomColorBy } from '@/utils/randomColor';
 import React from 'react';
 import TagColors from './TagColors';
 

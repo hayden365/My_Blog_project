@@ -1,5 +1,5 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
 type Props = {
 	total: number;
@@ -29,12 +29,12 @@ export default function PaginateUi({
 				.map((_, i) => (
 					<button
 						key={i + 1}
-						className="page-button text-xs"
+						className="page-button"
 						onClick={() => {
 							setActivePage(i + 1);
-							window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+							window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 						}}
-						aria-current={activePage === i + 1 && "page"}
+						aria-current={activePage === i + 1 && 'page'}
 					>
 						{i + 1}
 					</button>

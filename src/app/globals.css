@@ -18,7 +18,10 @@ img {
 
 @layer components {
 	.page-button {
-		@apply text-white bg-uRed py-1 px-4;
+		@apply py-1 px-4 text-xs;
+	}
+	.page-button:active {
+		@apply text-white bg-uRed;
 	}
 	.button-hover-red {
 		@apply hover:text-uRed duration-200;
