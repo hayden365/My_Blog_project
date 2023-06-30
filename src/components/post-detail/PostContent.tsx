@@ -7,6 +7,7 @@ import Image from 'next/image';
 import usePost from '@/hooks/usePost';
 import BubbleIcon from '../icons/BubbleIcon';
 import TagUi from '../ui/TagUi';
+import ActionBar from './ActionBar';
 
 type Props = {
 	postId: string;
@@ -43,6 +44,7 @@ export default function PostContent({ postId }: Props) {
 
 						<span>{formatDate(post.createdAt)}</span>
 					</div>
+					<ActionBar post={post} />
 					<div className="w-full border-2 border-gray-100 mt-4 mb-8" />
 					<MarkdownViewer content={post.content} />
 					<section className="w-full flex flex-col items-center gap-4 my-10">
