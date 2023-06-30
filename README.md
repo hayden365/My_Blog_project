@@ -2,4 +2,4 @@
 
 ### 배포
 
-https://my-blog-hayden365.vercel.app/
+https://my-blog-clone-puce.vercel.app/

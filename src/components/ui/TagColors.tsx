@@ -18,7 +18,7 @@ export default function TagColors({ tag, text_shadow, box_shadow }: Props) {
 			>
 				<span className={`${randomColorBy(tag).text}`}>#</span>
 				<span
-					className={`capitalize ${text_shadow}?? 'pl-1 [text-shadow:_3px_3px_5px_rgba(0,0,0,0.5)]':'pl-1'`}
+					className={`${text_shadow}?? 'pl-1 [text-shadow:_3px_3px_5px_rgba(0,0,0,0.5)]':'pl-1'`}
 				>
 					{tag}
 				</span>
