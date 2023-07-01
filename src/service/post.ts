@@ -1,6 +1,6 @@
 import createSlug from '@/utils/createSlug';
 import extractDescription from '@/utils/extractDescription';
-import { IPostDetail } from '../../type';
+import { IPostDetail, TComment } from '../../type';
 import { assetsURL, client, urlFor } from './sanity';
 
 export async function getPostDetail(
@@ -89,6 +89,36 @@ export async function deletePost(postId: string) {
 		.delete(targetPost)
 		.then(() => console.log('포스트 삭제 성공: postId'))
 		.catch(error => console.error(error));
+}
+
+export async function getComments(postId: string): Promise<TComment[]> {
+	const GROQ = `
+    *[_type == "post"&& _id=="${postId}"]
+      | order(_createdAt desc){
+        "comments":comments,
+      }.comments
+  `;
+	const comments = await client.fetch(GROQ);
+	return comments;
+}
+
+export async function postComment(
+	postId: string,
+	commentData: { content: string; name: string; password: string },
+) {
+	const { content, name, password } = commentData;
+	return client
+		.patch(postId)
+		.setIfMissing({ comments: [] })
+		.append('comments', [
+			{
+				content,
+				name,
+				password,
+				createdAt: new Date().toISOString(),
+			},
+		])
+		.commit({ autoGenerateArrayKeys: true });
 }
 
 export async function deleteComment(postId: string, _key: string) {

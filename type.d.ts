@@ -29,6 +29,17 @@ export interface IPostDetail {
 	postId: string;
 	createdAt: string;
 	updatedAt: string;
-	comments: IComment[];
+	comments: TComment[];
 	content: string;
+}
+
+export type TComment = IComment & {
+	_key: string;
+	createdAt: string;
+};
+
+export interface IComment {
+	content: string;
+	name: string;
+	password: string;
 }
