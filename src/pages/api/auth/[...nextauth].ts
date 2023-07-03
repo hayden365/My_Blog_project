@@ -1,12 +1,12 @@
-import { addUser } from "@/service/user";
-import NextAuth, { NextAuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+import { addUser } from '@/service/user';
+import NextAuth, { NextAuthOptions } from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 
 export const authOptions: NextAuthOptions = {
 	providers: [
 		GoogleProvider({
-			clientId: process.env.GOOGLE_CLIENT_ID || "",
-			clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+			clientId: process.env.GOOGLE_CLIENT_ID || '',
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
 		}),
 	],
 	callbacks: {
@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
 				return false;
 			}
 			addUser({
-				name: name || "",
+				name: name || '',
 				email: email,
 				image: image,
 				posts: [],
@@ -23,8 +23,10 @@ export const authOptions: NextAuthOptions = {
 			return true;
 		},
 	},
+
+	secret: process.env.NEXTAUTH_SECRET,
 	pages: {
-		signIn: "/auth/signin",
+		signIn: '/auth/signin',
 	},
 };
 
