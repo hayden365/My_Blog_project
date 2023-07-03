@@ -9,6 +9,7 @@ import BubbleIcon from '../icons/BubbleIcon';
 import TagUi from '../ui/TagUi';
 import ActionBar from './ActionBar';
 import CommentsBar from './CommentsBar';
+import { useSession } from 'next-auth/react';
 
 type Props = {
 	postId: string;
@@ -16,6 +17,7 @@ type Props = {
 
 export default function PostContent({ postId }: Props) {
 	const { post } = usePost(postId);
+	const { data: session } = useSession();
 
 	return (
 		<>
@@ -46,7 +48,7 @@ export default function PostContent({ postId }: Props) {
 
 							<span>{formatDate(post.createdAt)}</span>
 						</div>
-						<ActionBar post={post} />
+						{session?.user && <ActionBar post={post} />}
 						<div className="w-full border-2 border-gray-100 mt-4 mb-8" />
 						<MarkdownViewer content={post.content} />
 						<section className="w-full flex flex-col items-center gap-4 my-10">
